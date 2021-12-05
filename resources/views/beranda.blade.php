@@ -8,23 +8,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <title>Beranda</title>
+    @extends('layouts.app')
 </head>
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand bg-dark">
-        <ul class="nav">
-            <li><a href="{{ url('/beranda') }}" class="nav-link text-warning">Home</a></li>
-            <li><a href="{{ url('/data-siswa') }}" class="nav-link text-warning">Data Siswa</a></li>
-            <li><a href="{{ url('/info-kegiatan') }}" class="nav-link text-warning"> Info Kegiatan</a></li>
-        </ul>
-    </nav>
+    @section('content')
     <!-- Akhir Navbar -->
-    <div class="jumbotron text-center" <h1>Portal Informasi Siswa</h1>
+    <div class="jumbotron text-center"
+    <h1>Portal Informasi Siswa</h1>
         <p>Selamat datang di Portal Informasi Siswa SMA 404!</p>
-        <a href="#" class="btn btn-dark">Info Kegiatan</a>
-        <a href="#" class="btn btn-primary">Data Siswa</a>
+        <a href="{{ '/info-kegiatan' }}" class="btn btn-dark">Info Kegiatan</a>
+        <a href="{{ '/siswa' }}" class="btn btn-primary">Data Siswa</a>
     </div>
+    @endsection
 </body>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">

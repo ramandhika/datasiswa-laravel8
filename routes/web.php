@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 
@@ -15,12 +16,14 @@ use App\Http\Controllers\MenuController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view("beranda");
 });
 
 Route::get('/beranda', [MenuController::class, 'home']);
 Route::get('/info-kegiatan', [MenuController::class, 'info_kegiatan']);
 Route::get('/data-siswa', [MenuController::class, 'data_siswa']);
+
+Route::resource('siswa', SiswaController::class)->middleware('can:isAdminSiswa');
 
 Auth::routes();
 
