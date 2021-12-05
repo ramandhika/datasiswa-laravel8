@@ -15,13 +15,18 @@ class SiswaSeeder extends Seeder
     public function run()
     {
         DB::table('siswa')->insert([
-            'nama' => ' Andi Saputra',
+            'nama' => 'Ramandhika Ilham Pratama',
             'nis' => 101,
+            'tgl_lahir' => '2002-01-29'
+        ]);
+        DB::table('siswa')->insert([
+            'nama' => 'Andi Saputra',
+            'nis' => 102,
             'tgl_lahir' => '2003-12-22'
         ]);
         DB::table('siswa')->insert([
             'nama' => 'Budi Cahya',
-            'nis' => 102,
+            'nis' => 103,
             'tgl_lahir' => '2004-01-30'
         ]);
     }
